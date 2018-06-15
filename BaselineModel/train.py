@@ -139,10 +139,10 @@ def main(_):
       for i in range(config.MAXITER):
         start_time=time.time()
         train_acc,train_loss,train_global_step,train_pred,train_label= run_epoch(session,data=Train, model=m,config=config, eval_op=m.optim, verbose=True)
-        print("Epoch: %d train_acc: %.3f train_loss %.4f train_global_step:%s" % (i ,train_acc,train_loss,train_global_step))
+        print("Epoch: %d train_acc: %.4f train_loss %.4f train_global_step:%s" % (i ,train_acc,train_loss,train_global_step))
 
         dev_acc,dev_loss,_,dev_pred,dev_label= run_epoch(session,data=Dev,model=mvalid,config=eval_config)
-        print("Epoch: %d dev_acc: %.3f dev_loss %.4f" % (i , dev_acc,dev_loss))
+        print("Epoch: %d dev_acc: %.4f dev_loss %.4f" % (i , dev_acc,dev_loss))
 
 
         sys.stdout.flush()
