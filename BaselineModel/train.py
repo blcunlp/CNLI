@@ -133,7 +133,6 @@ def main(_):
       t0=time.time()
       best_dev_acc = 0.0
       best_val_epoch = 0 
-      last_change_epoch = 0
 
 
       for i in range(config.MAXITER):
