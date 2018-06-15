@@ -29,7 +29,7 @@ We choose the [Decomposable Attention Model](https://arxiv.org/pdf/1606.01933.pd
 
 
 **Data Preprocessing**  
-We use jieba to tokenize the sentences. During trainging, we use the pre-trained SGNS embedding introduced in [Analogical Reasoning on Chinese Morphological and Semantic Relations](https://arxiv.org/abs/1805.06504). It can be downloaded via [baiduyun](baiduyun). 
+We use jieba to tokenize the sentences. During trainging, we use the pre-trained SGNS embedding introduced in [Analogical Reasoning on Chinese Morphological and Semantic Relations](https://arxiv.org/abs/1805.06504). 
 
 **Main Scripts**  
 config.py：the parameter configuration.  
