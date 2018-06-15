@@ -47,7 +47,7 @@ You can train the model by the following command line:
 We adopt early stopping on dev set. The best results are shown in the following table: 
 
 data | accuracy(%)
----|---
+:-:|:-:
 train | 64.88
 dev | 58.70
 
