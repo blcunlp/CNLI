@@ -51,7 +51,7 @@ for line in open(opts.glove_data, "r"):
         glove_embedding = np.array(cols[1:], dtype=np.float32)
         if embeddings is None:
             glove_dimensionality = len(glove_embedding)
-            embeddings = np.empty((len(vocab)+2, glove_dimensionality), dtype=np.float32)  # +1 for pad & unk
+            embeddings = np.empty((len(vocab), glove_dimensionality), dtype=np.float32)  # +1 for pad & unk
         assert len(glove_embedding) == glove_dimensionality, "differing dimensionality in glove data?"
         embeddings[vocab[token]] = glove_embedding
         tokens_requiring_random.remove(token)
