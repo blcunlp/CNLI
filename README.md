@@ -17,8 +17,9 @@ Each line in the train (or dev) file corresponds to an instance, and it is arran
 ## Model
 
 This repository includes the baseline model for Chinese Natural Language Inference (CNLI) dataset. 
-We choose the [Decomposable Attention Model](https://arxiv.org/pdf/1606.01933.pdf) as our baseline model. More details about the model can be found in the [original paper](https://arxiv.org/pdf/1606.01933.pdf). 
-
+We provide two baseline models. 
+(1) The [Decomposable Attention Model](https://arxiv.org/pdf/1606.01933.pdf), which use FNNs and inter-attention mechinaism. More details about the model can be found in the [original paper](https://arxiv.org/pdf/1606.01933.pdf). 
+(2) The ESIM Model(https://arxiv.org/pdf/1609.06038.pdf), which is a baseline model for SNLI dataset. 
 
 ## Requirements
 * python 3.5
@@ -43,13 +44,13 @@ You can train the model by the following command line:
 
 
 ## Results 
-
+We provide the whole training data, which comprimises 90,000 items in the training set and 10,000 items in the dev dataset. 
 We adopt early stopping on dev set. The best results are shown in the following table: 
 
-data | accuracy(%)
-:-:|:-:
-train | 64.88
-dev | 58.70
+|Model |train-acc(%)|dev-acc(%)
+|:-:|:-:|:-:
+| Decomposable-Att|76.91 |69.35
+|ESIM |  76.82| 73.57
 
 
 
