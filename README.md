@@ -19,7 +19,7 @@ Each line in the train (or dev) file corresponds to an instance, and it is arran
 This repository includes the baseline model for Chinese Natural Language Inference (CNLI) dataset. 
 We provide two baseline models. 
 (1) The [Decomposable Attention Model](https://arxiv.org/pdf/1606.01933.pdf), which use FNNs and inter-attention mechinaism. More details about the model can be found in the [original paper](https://arxiv.org/pdf/1606.01933.pdf). 
-(2) The ESIM Model(https://arxiv.org/pdf/1609.06038.pdf), which is a baseline model for SNLI dataset. 
+(2) The ESIM Model (https://arxiv.org/pdf/1609.06038.pdf), which is a strong baseline model for SNLI dataset. 
 
 ## Requirements
 * python 3.5
@@ -30,7 +30,7 @@ We provide two baseline models.
 
 
 **Data Preprocessing**  
-We use jieba to tokenize the sentences. During trainging, we use the pre-trained SGNS embedding introduced in [Analogical Reasoning on Chinese Morphological and Semantic Relations](https://arxiv.org/abs/1805.06504).  You can download the sgns.merge.word from [here](https://pan.baidu.com/s/1kwxiPouou6ecxyJdYmnkvw).
+We use jieba to tokenize the sentences. During trainging, we use the pre-trained SGNS embedding introduced in [Analogical Reasoning on Chinese Morphological and Semantic Relations] (https://arxiv.org/abs/1805.06504).  You can download the sgns.merge.word from [here](https://pan.baidu.com/s/1kwxiPouou6ecxyJdYmnkvw).
 
 **Main Scripts**  
 config.py：the parameter configuration.  
@@ -39,8 +39,10 @@ data_reader.py: preparing data for the model.
 train.py: training the Decomposable Attention Model. 
 
 **Running Model**  
-You can train the model by the following command line: 
-> python3 train.py
+You can train the decomposable attention model and the esim model by the following command lines: 
+> python3 train.py  --model_type  decomposable_att 
+> python3 train.py  --model_type  esim
+
 
 
 ## Results 
