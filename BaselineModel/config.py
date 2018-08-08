@@ -17,8 +17,8 @@ class SmallConfig(object):
 
   early_stopping=5
  
-  train_file='./data/cnli/cnli_train_seg.txt'
-  dev_file='./data/cnli/cnli_dev_seg.txt'
+  train_file='./data/cnli/cnli_train_1.0_seg.txt'
+  dev_file='./data/cnli/cnli_dev_1.0_seg.txt'
 
   cnli_embedding_dir= './data/embedding/cnli_embedding.npy'
 

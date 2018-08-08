@@ -1,7 +1,9 @@
 # Baseline for Chinese Natural Language Inference (CNLI)  dataset
 
 ## Description
-This is the code we used to establish a baseline for the Chinese Natural Language Inference (CNLI) corpus. 
+This repository provides the official training and development dataset for the share task of Chinese Natural Language Inference (CNLI). 
+
+We evaluate the cnli\_1.0 corpus on two baseline models. 
 
 
 ## Data
