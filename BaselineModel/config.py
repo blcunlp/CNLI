@@ -15,9 +15,9 @@ class SmallConfig(object):
   batch_size = 32
   l2_strength=0.0003
 
-  early_stopping=10
+  early_stopping=5
  
-  train_file='./data/cnli/cnli_train_beta1_seg.txt'
+  train_file='./data/cnli/cnli_train_seg.txt'
   dev_file='./data/cnli/cnli_dev_seg.txt'
 
   cnli_embedding_dir= './data/embedding/cnli_embedding.npy'

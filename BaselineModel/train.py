@@ -7,6 +7,7 @@ import time
 import inspect
 import logging
 import copy
+import importlib
 import numpy as np
 import tensorflow as tf
 from tensorflow.contrib.rnn.python.ops import core_rnn_cell
@@ -15,7 +16,8 @@ from tensorflow.python.ops import variable_scope
 
 from myutils import *
 import data_reader as reader
-from decomposable_att import MyModel 
+#from decomposable_att import MyModel 
+#from esim import MyModel 
 from config import SmallConfig
 
 flags = tf.flags
@@ -24,6 +26,7 @@ logging = tf.logging
 flags.DEFINE_string(
     "model", "small",
     "A type of model. Possible options are: small, medium, large.")
+flags.DEFINE_string('model_type', "esim", 'esim or decomposable-att')
 flags.DEFINE_string("data_path", "",
                     "Where the training/test data is stored.")
 flags.DEFINE_string("save_path","model_saved",
@@ -34,7 +37,6 @@ flags.DEFINE_float('learning_rate', 0.0004, 'Initial learning rate.')
 flags.DEFINE_float('keep_prob', 0.8, 'keep_prob for dropout.')  
 flags.DEFINE_float('l2_strength', 0.0002, 'l2 rate for l2 loss.') 
 flags.DEFINE_integer('batch_size', 32,'batch_size ') 
-flags.DEFINE_bool('direction', "forward", 'forward or  reverse')
 
 FLAGS = flags.FLAGS
 
@@ -115,6 +117,9 @@ def main(_):
 
   Train,Dev,vocab = reader.file2seqid(config)
 
+  model = FLAGS.model_type
+  module = importlib.import_module('.'.join([FLAGS.model_type]),package='b')
+  MyModel = getattr(module, 'MyModel')
   with tf.Graph().as_default():
     initializer = tf.random_uniform_initializer(-config.init_scale,config.init_scale)
 
@@ -127,7 +132,7 @@ def main(_):
         mvalid = MyModel(is_training=False,config=eval_config)
 
     
-    sv = tf.train.Supervisor(logdir=FLAGS.save_path)
+    sv = tf.train.Supervisor()
     with sv.managed_session() as session:
       print ("model params",np.sum([np.product([xi.value for xi in x.get_shape()]) for x in tf.trainable_variables()]))
       t0=time.time()
