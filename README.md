@@ -1,7 +1,7 @@
 # Baseline for Chinese Natural Language Inference (CNLI)  dataset
 
 ## Description
-This repository provides the official training and development dataset for the share task of Chinese Natural Language Inference (CNLI). 
+This repository provides the official training and development dataset for [the Chinese Natural Language Inference (CNLI) share task] (http://www.cips-cl.org/static/CCL2018/call-evaluation.html). 
 
 We evaluate the cnli\_1.0 corpus on two baseline models. 
 
