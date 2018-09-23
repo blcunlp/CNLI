@@ -11,7 +11,7 @@
 5 | ray_li | ray_li | - | 0.7425 |
 6 | INTSIG_AI | eedanny | - | 0.7303 |
 7 | Yonseiiii | Parkhaeju | decom-att | 0.7242 |
-8 | BLCU-nlp | BLCU-nlp | ESIM | 0.7222 |
+8 | **Baseline** | **BLCU-nlp** | **ESIM** | **0.7222** |
 9 | 狂奔 | friend2 | lstm+cnn | 0.6952 |
 10 | _503 | _503 | bi | 0.6848 |
 11 | 遵义医学院医学信息工程学院 | lyb3b | BiLSTM | 0.6203 |
