@@ -141,7 +141,7 @@ class MyModel(object):
       v_xymax = tf.reduce_max(self.v_co_xy,axis=1)  #(b,2h)    
       v_yxmax = tf.reduce_max(self.v_co_yx,axis=1)  #(b,2h)
 
-      self.v = tf.concat([v_xyave, v_xymax, v_xymax, v_yxmax],axis=-1) 
+      self.v = tf.concat([v_xyave, v_xymax, v_yxave, v_yxmax],axis=-1) 
 
     with tf.variable_scope("pred-layer"):
   
